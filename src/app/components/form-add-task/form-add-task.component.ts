@@ -22,14 +22,21 @@ export class FormAddTaskComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
+  /**
+   * Esta función se encarga de realizar el submit del formulario
+   * @param event - Evento del formulario
+   */
   onSubmit(event: any) {
     event.preventDefault();
     this.saveNewTask();
   }
 
+  /**
+   * Esta función consume el servicio de la api que se encarga de
+   * crear una nueva tarea
+   */
   saveNewTask() {
     const date = new Date();
     const task = new Task(date.toJSON(), this.taskForm.value.statusTask, this.taskForm.value.titleTask);
@@ -39,16 +46,20 @@ export class FormAddTaskComponent implements OnInit {
           this.resetForm();
           this.refreshEvent.emit(true);
         }
+      }, error => {
+        console.log(error);
       }
     );
+  }
+
+  /**
+   * Esta función se encarga de formatear el formulario de crear una nueva tarea
+   */
+  resetForm() {
+    this.taskForm.reset(this.taskForm);
   }
 
   get titleTask() {
     return this.taskForm.get('titleTask');
   }
-
-  resetForm() {
-    this.taskForm.reset(this.taskForm);
-  }
-
 }
