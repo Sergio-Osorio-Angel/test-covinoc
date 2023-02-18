@@ -46,8 +46,11 @@
         border-radius: 7px
         background-color: white
         width: 100%
-        font-size: 20px
         padding: 12px 33px
+        table
+            border-collapse: collapse
+            font-size: 20px
+            width: 100%
         thead th
             color: $green-title-table
             font-size: 20px
@@ -56,6 +59,7 @@
             text-align: center
             padding-bottom: 9.5px
             padding-top: 12px
+            border-bottom: 1px solid #EBEBEB
             &:nth-child(1)
                 width: 20%
             &:nth-child(2)
@@ -74,6 +78,10 @@
             padding-top: 26.5px
             padding-bottom: 32.5px
             vertical-align: baseline
+            border-top: 1px solid #EBEBEB
+            &:nth-child(2)
+                text-align: justify
+
         input[type="checkbox"]
             width: 18px
             height: 18px
@@ -97,7 +105,6 @@
             color: #3DB0E3
             background: none
 
-    
     li
         margin-right: 15px !important
         &:last-of-type
@@ -107,7 +114,7 @@
         padding: 0
     li.pagination-previous span,
     li.pagination-next span
-        padding: 7px 9px 8.7px 
+        padding: 7px 9px 8.7px
         display: block
     li span
         font-family: Roboto-Bold
@@ -129,3 +136,36 @@
     .pagination-next::after,
     .pagination-next a::after
         display: none !important
+::ng-deep .custom-pagination
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    margin-top: 40px
+    .pagination-numbers
+        padding: 0
+        margin: 0 35px
+        display: flex
+        gap: 13px
+        list-style: none
+        li
+            color: white
+            font-family: Roboto-Bold
+            background: #D0D0D0
+            padding: 7px 9px 8.7px
+            border-radius: 9px
+            box-shadow: 0px 3px 6px #00000029
+            &.current 
+                background: #FFC183
+    button
+        padding: 0
+        border: none
+        background-color: transparent
+        &:disabled
+            svg
+                fill: #D0D0D0
+        svg
+            width: 15px
+            fill: #3DB0E3
+            
+

@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { PaginationInstance } from 'ngx-pagination';
 import { Task } from 'src/app/models/Task.model';
 import { ApiService } from 'src/app/services/api.service';
+
 
 @Component({
   selector: 'app-list-task',
@@ -15,6 +17,11 @@ export class ListTaskComponent implements OnInit {
   page: number;
   inputSearch: string;
 
+  public config: PaginationInstance = {
+    id: "custom",
+    itemsPerPage: 5,
+    currentPage: 1
+};
 
   constructor(private apiService: ApiService) {
     this.page = 1;
