@@ -43,6 +43,7 @@ export class ListTaskComponent implements OnInit {
    * al componente padre, para que filtre las tareas.
    */
   onKeyPress() {
+    this.config.currentPage = 1;
     this.search.emit(this.inputSearch);
   }
 
