@@ -1,0 +1,21 @@
+<div class="form-add-task">
+    <h2 class="tl-form">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M240 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H176V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H240V80z"/></svg>
+        Nueva tarea
+    </h2>
+    <form class="form-task" [formGroup]="taskForm" (ngSubmit)="onSubmit($event)" autocomplete="off">
+        <div class="form-group group-input">
+            <label for="titleTask">Título</label>
+            <input type="text" id="titleTask" placeholder="Ingrese título"  formControlName="titleTask">
+            <span class="span-error" [ngClass]="{'show-error': titleTask?.invalid && (titleTask?.dirty || titleTask?.touched)}">Ingrese un título al menos 3 caracteres</span>
+        </div>
+        <div class="form-group group-check">
+            <label for="statusTask">Tarea completada</label>
+            <input type="checkbox" id="statusTask" formControlName="statusTask">
+        </div>
+        <button type="submit" [disabled]="taskForm.invalid">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M240 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H176V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H240V80z"/></svg>
+            Guardar tarea
+        </button>
+    </form>
+</div>

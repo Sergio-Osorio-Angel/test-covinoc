@@ -1,0 +1,121 @@
+@import '../../shared/variables'
+.container-list-task
+    width: 100%
+    padding: 35px 18.4% 44px
+    .header-container-list-task
+        display: flex
+        justify-content: space-between
+        .tl-list-task
+            color: $green-title
+            font-family: Roboto-Bold
+            font-size: 25px
+            letter-spacing: 0.78px
+            display: flex
+            align-items: center
+            font-weight: normal
+            margin: 0
+            svg
+                width: 19px
+                height: auto
+                fill: $green-title
+                margin-right: 15px
+    .form-search
+        width: 40.1%
+    .group-search
+        position: relative
+        input
+            border: 1px solid $green-border-input
+            padding: 10px 20px
+            color: #BEBABADE
+            box-shadow: 0px 3px 6px #00000029
+            border-radius: 23px
+            font-size: 20px
+            width: 100%
+            outline: none
+        svg
+            fill: #27DAC5
+            width: 20px
+            height: 20px
+            position: absolute
+            right: 20px
+            top: 50%
+            transform: translateY(-50%) scaleX(-1)
+    .table-task
+        margin-top: 15px
+        box-shadow: 0px 3px 6px #00000029
+        border-radius: 7px
+        background-color: white
+        width: 100%
+        font-size: 20px
+        padding: 12px 33px
+        thead th
+            color: $green-title-table
+            font-size: 20px
+            font-weight: normal
+            letter-spacing: 0.62px
+            text-align: center
+            padding-bottom: 9.5px
+            padding-top: 12px
+        .task-completed
+            text-decoration: line-through
+        .txt-title
+            color: $gray-font
+        tbody td
+            text-align: center
+            padding-top: 26.5px
+            padding-bottom: 32.5px
+        input[type="checkbox"]
+            width: 18px
+            height: 18px
+        button
+            background: none
+            border: none
+            padding: 0
+            width: 18px
+            svg
+                fill: red
+                width: 18px
+                height: 21px
+::ng-deep .ngx-pagination
+    display: flex
+    justify-content: center
+    padding: 0
+    margin-top: 40px
+    .pagination-next,
+    .pagination-previous
+        a
+            color: #3DB0E3
+            background: none
+
+    
+    li
+        margin-right: 15px !important
+        &:last-of-type
+            margin: 0 !important
+    li.pagination-previous,
+    li.pagination-next
+        padding: 0
+    li.pagination-previous span,
+    li.pagination-next span
+        padding: 7px 9px 8.7px 
+        display: block
+    li span
+        font-family: Roboto-Bold
+    li a
+        color: white
+        font-family: Roboto-Bold
+        background: #D0D0D0
+        padding: 7px 9px 8.7px
+        border-radius: 9px
+    li.current
+        background: #FFC183
+        color: white
+        font-family: Roboto-Bold
+        padding: 7px 9px 8.7px
+        border-radius: 9px
+    .pagination-previous::before,
+    .pagination-previous a::before
+        display: none !important
+    .pagination-next::after,
+    .pagination-next a::after
+        display: none !important

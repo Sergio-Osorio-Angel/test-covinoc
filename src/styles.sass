@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import './app/shared/variables'
+@font-face 
+  font-family: 'Roboto-Regular'
+  src: url('/assets/fonts/Roboto-Regular.ttf')
+@font-face 
+  font-family: 'Roboto-Bold'
+  src: url('/assets/fonts/Roboto-Bold.ttf')
+@font-face 
+  font-family: 'Roboto-Medium'
+  src: url('/assets/fonts/Roboto-Medium.ttf')
+html 
+  box-sizing: border-box
+*, *::after, *::before 
+  box-sizing: inherit
+  font-family: 'Roboto-Regular'
+body
+  margin: 0
+  width: 100%
+img 
+    max-width: 100%
+    height: auto
+    vertical-align: middle
+button, a
+  cursor: pointer
